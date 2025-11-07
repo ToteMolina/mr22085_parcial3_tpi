@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Producto;
 use App\Models\Proveedor;
 use Illuminate\Http\Request;
 
@@ -13,6 +14,8 @@ class ProveedorController extends Controller
     public function index()
     {
         //
+        $dataProveedor = Producto::all();
+        return view('proveedor.index', compact('dataProveedor'));
     }
 
     /**
@@ -29,6 +32,13 @@ class ProveedorController extends Controller
     public function store(Request $request)
     {
         //
+        $proveedor = new Proveedor();
+        $proveedor->nombreproveedor = $request->nombreproveedor;
+        $proveedor->direccion = $request->direccion;
+        $proveedor->codigo = $request->codigo;
+        $proveedor->save();
+
+        return redirect('proveedor.index', compact('dataProveedor'));
     }
 
     /**
@@ -50,7 +60,7 @@ class ProveedorController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Proveedor $proveedor)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -58,7 +68,7 @@ class ProveedorController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Proveedor $proveedor)
+    public function destroy($id)
     {
         //
     }
