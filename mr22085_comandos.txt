@@ -1,0 +1,30 @@
+Creación del modelo Categorías
+php artisan make:model Categorias -mfscr
+
+Hacemos las migraciones
+php artisan migrate
+
+Creación del seeder de la tabla categorias
+php artisan db:seed
+
+
+
+Creación del modelo Proveedor
+php artisan make:model Proveedor -mfscr
+
+Hacemos las migraciones
+php artisan migrate
+
+Creación del seeder de la tabla proveedor
+php artisan db:seed --class="ProveedorSeeder"
+
+
+
+Creación del modelo Producto
+php artisan make:model Producto -mfscr
+
+Hacemos las migraciones
+php artisan migrate
+
+Creación del seeder de la tabla productos
+php artisan db:seed --class="ProductoSeeder"
