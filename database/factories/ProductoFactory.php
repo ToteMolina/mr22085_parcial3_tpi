@@ -18,6 +18,10 @@ class ProductoFactory extends Factory
     {
         return [
             //
+            "nombre"=>$this->faker->word(),
+            "precio"=>$this->faker->randomFloat(null, 1, 100),
+            "idcategoria"=>$this->faker->numberBetween(1, 10),
+            "idproveedor"=>$this->faker->numberBetween(1, 10),
         ];
     }
 }

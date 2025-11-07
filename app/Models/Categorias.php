@@ -13,4 +13,8 @@ class Categorias extends Model
     protected $fillable = [
         "nombreCategoria"
     ];
+
+    public function productos(){
+        return $this->belongsTo(Categorias::class);
+    }
 }

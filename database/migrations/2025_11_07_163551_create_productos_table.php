@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('productos', function (Blueprint $table) {
             $table->id();
+            $table->string('nombre', 500);
+            $table->decimal('precio', 10, 2);
+            $table->foreignId('idcategoria')->constrained('categorias')->onDelete('restrict');
+            $table->foreignId('idproveedor')->constrained('proveedor')->onDelete('restrict');
             $table->timestamps();
         });
     }

@@ -15,4 +15,8 @@ class Proveedor extends Model
         "direccion",
         "codigo"
     ];
+
+    public function productos(){
+        return $this->belongsTo(Proveedor::class);
+    }
 }
